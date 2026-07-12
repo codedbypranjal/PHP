@@ -161,6 +161,7 @@ $light=match($traffic){
 
 echo($light);
 
+
  ?>
 </body>
 </html>
