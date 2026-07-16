@@ -1,2 +1,12 @@
 <?php
-include 'database_connect_php05'
+include 'db-connect-php';
+$sql="Create Database World";
+$result=mysqli_query($conn,$sql);
+if($result)
+    {
+        echo "Database is created";
+    }
+    else{
+        echo "Database is not created.".mysqli_error($conn);
+    }
+    ?>
