@@ -1,13 +1,10 @@
 <?php
 $host='localhost';
 $user='root';
-$pass='';
+$pass='pranjal@123';
 
 $conn=mysqli_connect($host,$user,$pass);
-if($conn)
+if(!$conn)
 {
-    echo "Database connected successfully";
-}
-else{
-    echo "Database failed to connect".mysqli_connect_error();
+    die"Database not connected";
 }
