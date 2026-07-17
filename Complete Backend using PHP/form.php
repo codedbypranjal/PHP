@@ -93,9 +93,9 @@
                 <td>Address</td>
                 <td>
                     <select name="" id="">
-                        <option value="">Kathmandu</option>
-                        <option value="">Lalitpur</option>
-                        <option value="">Bhaktapur</option>
+                        <option value="ktm">Kathmandu</option>
+                        <option value="llt">Lalitpur</option>
+                        <option value="bkt">Bhaktapur</option>
                     </select>
                 </td>
             </tr>
@@ -146,17 +146,18 @@
                     <input type="file" name="image" accept="image/*">
                 </td>
             </tr>
-
+            
             <tr>
                 <td colspan="2" class="buttons">
-                    <input type="submit" value="Submit">
+                    <input type="submit" value="Submit" name="Submit">
                     <input type="reset" value="Reset">
                 </td>
             </tr>
-
+            
         </table>
-
+        
     </form>
+</div>
         <?php
     include 'db-connect-php.php';
     if(isset($_POST['Submit']))
@@ -166,23 +167,33 @@
             $dob=$_POST['dob'];
             $add=$_POST['add'];
             $phone=$_POST['phone'];
-            $hob=$_POST['hobbies'];
+
             $hobbies=$_POST['hobbies'];
+            $hob=implode(',',$hobbies);
+
             $gen=$_POST['gender'];
             $email=$_POST['email'];
+
             $cv=$_FILE['cv']['name'];
-            
             $temp1=$_FILES['cv']['tmp_name'];
             $folder1="static/".$cv;
             move_uploaded_file($temp1,$folder1);
+
             $img=$_FILES['image']['name'];
             $temp2=$_FILES['image']['tmp_name'];
             $folder2='static/'.$pic ;
             move_uploaded_file($temp2,$folder2);
 
             $sql="insert into student(Name,Age,Dob,Address,Phone,Hobbies,Gender,Email,Pic,Cv
+             $result=mysqli_query($conn,$sql);
+            if($result)
+                {
+                    echo "Records were inserted";
+                    }
+                    else{
+                        echo "Records failed to insert".mysqli_error($conn);
+            }
         }
-</div>
 ?>  
 </div>
 
