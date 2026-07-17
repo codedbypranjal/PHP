@@ -92,7 +92,11 @@
             <tr>
                 <td>Address</td>
                 <td>
-                    <textarea name="address" rows="4" required></textarea>
+                    <select name="" id="">
+                        <option value="">Kathmandu</option>
+                        <option value="">Lalitpur</option>
+                        <option value="">Bhaktapur</option>
+                    </select>
                 </td>
             </tr>
 
