@@ -180,6 +180,7 @@
             $folder2='static/'.$pic ;
             move_uploaded_file($temp2,$folder2);
 
+            $sql="insert into student(Name,Age,Dob,Address,Phone,Hobbies,Gender,Email,Pic,Cv
         }
 </div>
 ?>  
