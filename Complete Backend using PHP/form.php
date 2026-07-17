@@ -167,6 +167,7 @@
             $add=$_POST['add'];
             $phone=$_POST['phone'];
             $hob=$_POST['hobbies'];
+            $hobbies=$_POST['hobbies'];
             $gen=$_POST['gender'];
             $email=$_POST['email'];
             $cv=$_FILE['cv']['name'];
