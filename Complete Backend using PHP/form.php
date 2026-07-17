@@ -110,10 +110,10 @@
             <tr>
                 <td>Hobbies</td>
                 <td>
-                    <input type="checkbox" name="hobbies" value="Reading"> Reading
-                    <input type="checkbox" name="hobbies" value="Sports"> Sports
-                    <input type="checkbox" name="hobbies" value="Music"> Music
-                    <input type="checkbox" name="hobbies" value="Travel"> Travel
+                    <input type="checkbox" name="hobbies[]" value="Reading"> Reading
+                    <input type="checkbox" name="hobbies[]" value="Sports"> Sports
+                    <input type="checkbox" name="hobbies[]" value="Music"> Music
+                    <input type="checkbox" name="hobbies[]" value="Travel"> Travel
                 </td>
             </tr>
 
@@ -157,6 +157,31 @@
         </table>
 
     </form>
+        <?php
+    include 'db-connect-php.php';
+    if(isset($_POST['Submit']))
+        {
+            $Name=$_POST['name'];
+            $age=$_POST['age'];
+            $dob=$_POST['dob'];
+            $add=$_POST['add'];
+            $phone=$_POST['phone'];
+            $hob=$_POST['hobbies'];
+            $gen=$_POST['gender'];
+            $email=$_POST['email'];
+            $cv=$_FILE['cv']['name'];
+            
+            $temp1=$_FILES['cv']['tmp_name'];
+            $folder1="static/".$cv;
+            move_uploaded_file($temp1,$folder1);
+            $img=$_FILES['image']['name'];
+            $temp2=$_FILES['image']['tmp_name'];
+            $folder2='static/'.$pic ;
+            move_uploaded_file($temp2,$folder2);
+
+        }
+</div>
+?>  
 </div>
 
 </body>
